@@ -1,0 +1,99 @@
+﻿@model admin.techunsolved.com.Models.TechArticleDataModel
+
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Create Articles</h5> <small class="text-muted float-end">Merged input groups</small>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <!-- Tech Articles -->
+                <div class="row mb-3">
+                    <label asp-for="TechArticlesId" class="col-sm-2 col-form-label">Articles:</label>
+                    <div class="col-sm-10">
+                        <select id="articleDropdown" asp-for="TechArticlesId" class="form-select">
+                            <option value="">Select Article</option>
+                        </select>
+                        <span asp-validation-for="TechArticlesId" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label asp-for="program_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Code Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="program_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter heading.." aria-label="Enter heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="program_code" class="col-sm-2 col-form-label" for="basic-icon-default-company">Code</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="program_code" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter Subheading.." aria-label="Enter Subheading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Output Heading & Data -->
+                <div class="row mb-3">
+                    <label asp-for="output_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Intro Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="output_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter output heading.." aria-label="Enter output heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="output_code" class="col-sm-2 form-label" for="basic-icon-default-message">Output</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                            <textarea asp-for="output_code" id="basic-icon-default-message" class="form-control"
+                                      placeholder="Hi, Do you like to enter some code?"
+                                      aria-label="Hi, Do you like to enter some code?"
+                                      aria-describedby="basic-icon-default-message2">
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <label asp-for="other_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="other_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter Content heading.." aria-label="Enter Content heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="other_code" class="col-sm-2 form-label" for="basic-icon-default-message">Code</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                            <textarea asp-for="other_code" id="basic-icon-default-message" class="form-control"
+                                      placeholder="Hi, Do you like to enter some code?"
+                                      aria-label="Hi, Do you like to enter some code"
+                                      aria-describedby="basic-icon-default-message2">
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

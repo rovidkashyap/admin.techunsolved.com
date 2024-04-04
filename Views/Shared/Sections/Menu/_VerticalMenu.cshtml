@@ -1,0 +1,223 @@
+﻿@{
+    TempData.Keep();
+    string? currentPage = ViewContext.HttpContext.Request.Path;
+}
+
+<!-- Menu -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+    <div class='app-brand demo @((ViewData["navbarFull"] != null && Convert.ToBoolean(ViewData["navbarFull"])) ? "d-xl-none" : "")'>
+        <a asp-controller="Dashboard" asp-action="Index" class="app-brand-link">
+            <span class="asp-brand-logo demo">
+                @* LOGO Here *@
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">@TempData.Peek("appName")</span>
+        </a>
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    @* Full version menu-items *@
+    <ul class="menu-inner py-1">
+        <!-- Dashboard -->
+        <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Dashboard/") ? " active open" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div>Dashboard</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item@(currentPage == "/" ? " active" : "")">
+                    <a asp-controller="Dashboard" asp-action="Index" class="menu-link">
+                        <div>Home</div>
+                    </a>    
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech Categories Small Heading -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Tech Categories</span>
+        </li>
+
+        <!-- Tech Category Navigation -->
+        <li class='menu-item@(currentPage.StartsWith("/TechCategory") ? " active open" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div>Tech Category</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechCategory/Display" ? " active" : "")'>
+                    <a asp-controller="TechCategory" asp-action="GetAll" class="menu-link">
+                        <div>Display Categories</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechCategory/Create" ? " active" : "")'>
+                    <a asp-controller="TechCategory" asp-action="Create" class="menu-link">
+                        <div>Create Category</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech SubCategory Navigation -->
+        <li class='menu-item@(currentPage.StartsWith("/TechSubCategory") ? " active open" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div>Tech SubCategory</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechSubCategory/Display" ? " active" : "")'>
+                    <a asp-controller="TechSubCategory" asp-action="GetAll" class="menu-link">
+                        <div>Display SubCategories</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechSubCategory/Create" ? " active" : "")'>
+                    <a asp-controller="TechSubCategory" asp-action="Create" class="menu-link">
+                        <div>Create SubCategory</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech Modules -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Tech Modules</span>
+        </li>
+
+        <!-- Tech Modules Navigation -->
+        <li class='menu-item@(currentPage == "/TechModule" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-list-check"></i>
+                <div>Tech Modules</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechModule/Display" ? " active" : "")'>
+                    <a asp-controller="TechModule" asp-action="GetAll" class="menu-link">
+                        <div>Display Modules</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechModule/Create" ? " active" : "")'>
+                    <a asp-controller="TechModule" asp-action="Create" class="menu-link">
+                        <div>Create Module</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech Topics -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Tech Topics</span>
+        </li>
+
+        <!-- Tech Topics Navigation -->
+        <li class='menu-item@(currentPage == "/TechTopic" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-copy"></i>
+                <div>Tech Topics</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechTopic/Display" ? " active" : "")'>
+                    <a asp-controller="TechTopic" asp-action="GetAll" class="menu-link">
+                        <div>Display Topics</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechTopic/Create" ? " active" : "")'>
+                    <a asp-controller="TechTopic" asp-action="Create" class="menu-link">
+                        <div>Create Topic</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech Articles -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Tech Articles</span>
+        </li>
+
+        <!-- Tech Articles Navigation -->
+        <li class='menu-item@(currentPage == "/TechArticle" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div>Tech Articles</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechArticle/Display" ? " active" : "")'>
+                    <a asp-controller="TechArticle" asp-action="GetAll" class="menu-link">
+                        <div>Display Articles</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechArticle/Create" ? " active" : "")'>
+                    <a asp-controller="TechArticle" asp-action="Create" class="menu-link">
+                        <div>Create Article</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Tech Articles Data Navigation -->
+        <li class='menu-item@(currentPage == "/TechArticlesData" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div>Tech Articles Data</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechArticlesData/Display" ? " active" : "")'>
+                    <a asp-controller="TechArticlesData" asp-action="GetAll" class="menu-link">
+                        <div>Display Articles Data</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/TechArticlesData/Create" ? " active" : "")'>
+                    <a asp-controller="TechArticlesData" asp-action="Create" class="menu-link">
+                        <div>Create Article Data</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Reports -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Reports</span>
+        </li>
+
+        <!-- Reports Navigation -->
+        <li class='menu-item@(currentPage == "/Reports" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-list-check"></i>
+                <div>Articles</div>
+            </a>
+            <ul class="menu-sub">
+                <li class='menu-item@(currentPage == "/TechTopic/GetTopics" ? " active" : "")'>
+                    <a asp-controller="TechTopic" asp-action="GetTopics" class="menu-link">
+                        <div>Programming Topics</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/Reports/DisplayArticlesById" ? " active" : "")'>
+                    <a asp-controller="Reports" asp-action="GetById" class="menu-link">
+                        <div>Get Articles By Id</div>
+                    </a>
+                </li>
+                <li class='menu-item@(currentPage == "/Reports/DisplayByName" ? " active" : "")'>
+                    <a asp-controller="Reports" asp-action="GetByName" class="menu-link">
+                        <div>Get Articles By Topic Name</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Reports -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">MISC</span>
+        </li>
+
+        <li class='menu-item@(currentPage == "/Documentation" ? " active" : "")'>
+            <a href="javascript:void(0);" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div>Documentation</div>
+            </a>
+        </li>
+
+    </ul>
+</aside>

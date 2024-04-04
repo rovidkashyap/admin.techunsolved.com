@@ -1,0 +1,58 @@
+﻿@model admin.techunsolved.com.Models.TechTopicModel
+
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Edit Articles</h5> <small class="text-muted float-end">Merged input groups</small>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div class="row mb-3">
+                    <!-- This div contains the hidden input for TechArticleId -->
+                    <div class="d-none">
+                        <input asp-for="TechTopicId" class="form-control" />
+                    </div>
+                </div>
+                <!-- Topic ID & Name -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Module Name</label>
+                    <div class="col-sm-10">
+                        <select id="topicName" class="form-select" disabled>
+                            <option value="techModulesName">@ViewBag.TopicName</option>
+                            <input asp-for="TechModulesId" type="hidden" />
+                        </select>
+                    </div>
+                </div>
+                <!-- Tech Modules & Topics -->
+                <!-- Main Heading & Sub  Heading -->
+                <div class="row mb-3">
+                    <label asp-for="TechTopicName" class="col-sm-2 col-form-label" for="basic-icon-default-company">Topic Name</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="TechTopicName" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter Topic name.." aria-label="Enter Topic name.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="Level" class="col-sm-2 col-form-label" for="basic-icon-default-company">Level</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="Level" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter level.." aria-label="Enter level.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,317 @@
+﻿@{
+    ViewData["Title"] = "Dashboard - Techunsolved Data";
+}
+
+@section VendorStyles {
+    <link rel="stylesheet" href="~/vendor/libs/apex-charts/apex-charts.css" />
+}
+@section VendorScripts {
+    <script src="~/vendor/libs/apex-charts/apexcharts.js"></script>
+}
+@section PageScripts {
+    <Script src="~/js/dashboards-analytics.js"></Script>
+}
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 order-1">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="~/img/icons/programming/c-sharp.png" alt="c-sharp" class="rounded">
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <a class="dropdown-item" href="javascript:void(0);">View Questions</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Add Questions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-medium d-block mb-1">C# Interview Questions</span>
+                        <h3 class="card-title mb-2">0</h3>
+                        <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +0.00%</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="~/img/icons/programming/reactjs.png" alt="reacts-js" class="rounded">
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <a class="dropdown-item" href="javascript:void(0);">View Questions</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Add Questions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-medium d-block mb-1">React Interview Questions</span>
+                        <h3 class="card-title mb-2">0</h3>
+                        <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +0.00%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 order-1">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="~/img/icons/programming/mvc.png" alt="mvc" class="rounded">
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <a class="dropdown-item" href="javascript:void(0);">View Questions</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Add Questions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-medium d-block mb-1">MVC Inteview Questions</span>
+                        <h3 class="card-title mb-2">0</h3>
+                        <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +0.00%</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="~/img/icons/programming/azure.png" alt="azure" class="rounded">
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                    <a class="dropdown-item" href="javascript:void(0);">View Questions</a>
+                                    <a class="dropdown-item" href="javascript:void(0);">Add Questions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-medium d-block mb-1">Azure Interview Questions</span>
+                        <h3 class="card-title mb-2">0</h3>
+                        <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +0.00%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Order Statistics -->
+    <div class="col-md-6 col-12 order-0 mb-4">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                <div class="card-title mb-0">
+                    <h5 class="m-0 me-2">Courses Statistics</h5>
+                    <small class="text-muted">@ViewBag.totalCourse_Count Total Courses</small>
+                </div>
+                <div class="dropdown">
+                    <button class="btn p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                        <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex flex-column align-items-center gap-1">
+                        <h2 class="mb-2">@ViewBag.totalCourse_Count</h2>
+                        <span>Total Courses</span>
+                    </div>
+                    <div id="orderStatisticsChart"></div>
+                </div>
+                <ul class="p-0 m-0">
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"><img src="~/img/icons/programming/dot-net.png" /></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <h6 class="mb-0">Dot Net Development</h6>
+                                <small class="text-muted">C#, MVC, WebApi, LINQ</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.dotnet_Count</h6> <span class="text-muted">Courses</span>
+                            </div>
+                            @*<div class="user-progress">
+                                <small class="fw-medium">@ViewBag.dotnet_Count Courses</small>
+                            </div>*@
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><img src="~/img/icons/programming/frontend.png" /></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <h6 class="mb-0">Front End Development</h6>
+                                <small class="text-muted">CSS, jQuery, Bootstrap, HTML5</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.frontend_Count</h6> <span class="text-muted">Courses</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><img src="~/img/icons/programming/javascript.png" /></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <h6 class="mb-0">JavaScript Frameworks</h6>
+                                <small class="text-muted">JavaScrupt, ReactJS, AngularJS, VueJS</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.javascript_Count</h6> <span class="text-muted">Courses</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"><img src="~/img/icons/programming/cloud.png" /></span>
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <h6 class="mb-0">Cloud Development</h6>
+                                <small class="text-muted">Microsoft Azure, AWS, GCP</small>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.cloud_Count</h6> <span class="text-muted">Courses</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/ Order Statistics -->
+    <!-- Transactions -->
+    <div class="col-md-6 col-12 order-2 mb-4">
+        <div class="card h-100">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="card-title m-0 me-2">Programming Articles Counts</h5>
+                <div class="dropdown">
+                    <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-dots-vertical-rounded"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                        <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="p-0 m-0">
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/c-sharp.png" alt="c-sharp" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">.Net Development</small>
+                                <h6 class="mb-0">C# .Net</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.csharp_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/mvc.png" alt="mvc" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">.Net Development</small>
+                                <h6 class="mb-0">ASP.Net MVC</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.mvc_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/web-api.png" alt="web-api" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">.Net Development</small>
+                                <h6 class="mb-0">ASP.Net Web API</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.webapi_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/java.png" alt="java" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">Java Development</small>
+                                <h6 class="mb-0">Core Java</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.java_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-4 pb-1">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/reactjs.png" alt="react-js" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">Javascript Framework</small>
+                                <h6 class="mb-0">React JS</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.bootstrap_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="d-flex">
+                        <div class="avatar flex-shrink-0 me-3">
+                            <img src="~/img/icons/programming/bootstrap.png" alt="bootstrap" class="rounded">
+                        </div>
+                        <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                                <small class="text-muted d-block mb-1">FrontEnd Development</small>
+                                <h6 class="mb-0">Bootstrap</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                                <h6 class="mb-0">@ViewBag.react_ArticleCount</h6> <span class="text-muted">Articles</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/ Transactions -->
+</div>

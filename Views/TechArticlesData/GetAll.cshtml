@@ -1,0 +1,112 @@
+﻿@model IEnumerable<admin.techunsolved.com.Models.TechArticleDataModel>
+
+<!-- Search Input -->
+<div class="mb-3">
+    <input type="text" id="categoryFilter" class="form-control" placeholder="Search by Article Data">
+</div>
+
+<div class="card">
+    <h5 class="card-header">Articles Data</h5>
+    <div class="card-body">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th style="text-align:center;">
+                            
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TechArticlesNames)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.program_heading)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.program_code)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.output_heading)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.output_code)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.other_heading)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.other_code)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td style="text-align:center;">
+                                <span class="badge bg-label-info me-1">
+                                    <a href="@Url.Action("Edit", new { id = item.TechArticlesDataId })">
+                                        EDIT
+                                    </a>
+                                </span>
+                            </td>
+                            <td>
+                                <b>@Html.DisplayFor(modelItem => item.TechArticlesNames)</b>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.program_heading)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-primary show-data"
+                                        data-bs-toggle="modal" data-bs-target="#modalScrollable" data-mainheading="@Html.DisplayFor(modelItem => item.TechArticlesNames)"
+                                        data-mainsubheading="@Html.DisplayFor(modelItem => item.program_code)">
+                                    Show Code
+                                </button>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.output_heading)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-primary show-data"
+                                        data-bs-toggle="modal" data-bs-target="#modalScrollable" data-mainheading="@Html.DisplayFor(modelItem => item.TechArticlesNames)"
+                                        data-mainsubheading="@Html.DisplayFor(modelItem => item.output_code)">
+                                    Show Code
+                                </button>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.other_heading)
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-primary show-data"
+                                        data-bs-toggle="modal" data-bs-target="#modalScrollable" data-mainheading="@Html.DisplayFor(modelItem => item.TechArticlesNames)"
+                                        data-mainsubheading="@Html.DisplayFor(modelItem => item.other_code)">
+                                    Show Code
+                                </button>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalScrollable" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalScrollableTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @*<p id="modalBodyContent"></p>*@
+                <pre><code id="modalBodyContent" class="language-csharp"></code></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Basic Bootstrap Table -->

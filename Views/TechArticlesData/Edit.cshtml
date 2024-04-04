@@ -1,0 +1,113 @@
+﻿@model admin.techunsolved.com.Models.TechArticleDataModel
+
+<div class="col-xxl">
+    <div class="card mb-4">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <h5 class="mb-0">Edit Articles</h5> <small class="text-muted float-end">Merged input groups</small>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div class="row mb-3">
+                    <!-- This div contains the hidden input for TechArticleId -->
+                    <div class="d-none">
+                        <input asp-for="TechArticlesDataId" class="form-control" />
+                    </div>
+                </div>
+                <!-- Topic ID & Name -->
+                <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label">Article Name</label>
+                    <div class="col-sm-10">
+                        <select id="topicName" class="form-select" disabled>
+                            <option value="techTopicName">@ViewBag.TopicName</option>
+                            <input asp-for="TechArticlesId" type="hidden" />
+                        </select>
+                    </div>
+                </div>
+                <!-- Tech Modules & Topics -->
+                <!-- Main Heading & Sub  Heading -->
+                <div class="row mb-3">
+                    <label asp-for="program_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Program Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="program_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter heading.." aria-label="Enter heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="program_code" class="col-sm-2 form-label" for="basic-icon-default-message">Program Code</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                            <textarea asp-for="program_code" id="basic-icon-default-message" class="form-control"
+                                      placeholder="Hi, Do you like to enter some code for article?"
+                                      aria-label="Hi, Do you like to enter some code for article?"
+                                      aria-describedby="basic-icon-default-message2">
+                            </textarea>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Heading & SubHeading -->
+                <!-- Introduction Heading & Data -->
+                <div class="row mb-3">
+                    <label asp-for="output_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Output Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="output_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter Introduction heading.." aria-label="Enter Introduction heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="output_code" class="col-sm-2 form-label" for="basic-icon-default-message">Intro Content</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                            <textarea asp-for="output_code" id="basic-icon-default-message" class="form-control"
+                                      placeholder="Hi, Do you like to enter some output?"
+                                      aria-label="Hi, Do you like to enter some output?"
+                                      aria-describedby="basic-icon-default-message2">
+                            </textarea>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Introduction Heading & Data -->
+                <!-- Content Heading & Data -->
+                <div class="row mb-3">
+                    <label asp-for="other_heading" class="col-sm-2 col-form-label" for="basic-icon-default-company">Code Heading</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                            <input asp-for="other_heading" type="text" id="basic-icon-default-company" class="form-control"
+                                   placeholder="Enter Content heading.." aria-label="Enter Content heading.." aria-describedby="basic-icon-default-company2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label asp-for="other_code" class="col-sm-2 form-label" for="basic-icon-default-message">Code</label>
+                    <div class="col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                            <textarea asp-for="other_code" id="basic-icon-default-message" class="form-control"
+                                      placeholder="Hi, Do you like to enter some content?"
+                                      aria-label="Hi, Do you like to enter some content"
+                                      aria-describedby="basic-icon-default-message2">
+                        </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

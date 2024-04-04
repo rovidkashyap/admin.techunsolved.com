@@ -1,0 +1,46 @@
+﻿@model IEnumerable<admin.techunsolved.com.Models.TechCategoryModel>
+
+<!-- Search Input -->
+<div class="mb-3">
+    <input type="text" id="categoryFilter" class="form-control" placeholder="Search by Category Name">
+</div>
+
+<!-- Basic Bootstrap Table -->
+<div class="card">
+    <h5 class="card-header">Categories</h5>
+    
+    <div class="card-body">
+    <div class="table-responsive text-nowrap">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">@*<b>@Html.DisplayNameFor(model => model.TechCategoryId)</b>*@</th>
+                    <th><b>@Html.DisplayNameFor(model => model.TechCategoryName)</b></th>
+                    <th><b>@Html.DisplayNameFor(model => model.Description)</b></th>
+                    <th><b>@Html.DisplayNameFor(model => model.Initial)</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td style="text-align:center;">
+                            <span class="badge bg-label-info me-1">
+                                <a href="@Url.Action("Edit", "TechCategory", new { id = item.TechCategoryId })">
+                                    EDIT
+                                </a>
+                            </span>
+                        </td>
+                        <td><b>@Html.DisplayFor(modelItem => item.TechCategoryName)</b></td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Initial)</td>
+                    </tr>
+                    }
+                
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<!--/ Basic Bootstrap Table -->
+
